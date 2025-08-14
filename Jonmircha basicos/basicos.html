@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos JavaScript</title>
+  </head>
+  <body>
+    <h1>Fundamentos JavaScript</h1>
+    <script>
+      var hola = "hola Mundo";
+      // Cuando declaramos una variable con let o const sera una variable de ambito de bloque, no uses var porque no tiene la característica de ambito de bloque
+      let hello = "Hrllo World";
+      console.log(hola);
+      console.log(window);
+      console.log(window.hola);
+      console.log(window.hello);
+
+      // Ambito de bloque
+      if (true) {
+        var a = 3;
+        console.log(a);
+      }
+      console.log(a);
+      //Esto es un bloque - comentario de una lnea
+      /* Esto es un
+      comentario
+      de varias
+      lineas
+      */
+      var musica = "Rock";
+      console.log("Variable Música antes del bloque", musica);
+      {
+        var musica = "pop";
+        console.log("Variable Música antes del bloque", musica);
+      }
+
+      console.log("Variable Música despues del bloque", musica);
+      console.log("******************");
+      let musica2 = "Rock";
+      console.log("Variable Música antes del bloque", musica2);
+      {
+        let musica2 = "pop";
+        console.log("Variable Música antes del bloque", musica2);
+      }
+      console.log("Variable Música despues del bloque", musica2);
+    </script>
+  </body>
+</html>
