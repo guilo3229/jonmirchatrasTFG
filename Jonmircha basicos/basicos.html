@@ -8,42 +8,29 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      var hola = "hola Mundo";
-      // Cuando declaramos una variable con let o const sera una variable de ambito de bloque, no uses var porque no tiene la característica de ambito de bloque
-      let hello = "Hrllo World";
-      console.log(hola);
-      console.log(window);
-      console.log(window.hola);
-      console.log(window.hello);
-
-      // Ambito de bloque
-      if (true) {
-        var a = 3;
-        console.log(a);
-      }
+      // Usaremos const cuando no vayan a cambiar su variable en el flujo de la aplicacion
+      const PI = 3.1416;
+      /* Con const no puedes tener variables sin definir */
+      // Con let si que puedes
+      // const NUEVE;
+      // PI = 3.15;
+      console.log(PI);
+      let a;
+      a = "Kenai";
       console.log(a);
-      //Esto es un bloque - comentario de una lnea
-      /* Esto es un
-      comentario
-      de varias
-      lineas
-      */
-      var musica = "Rock";
-      console.log("Variable Música antes del bloque", musica);
-      {
-        var musica = "pop";
-        console.log("Variable Música antes del bloque", musica);
-      }
-
-      console.log("Variable Música despues del bloque", musica);
-      console.log("******************");
-      let musica2 = "Rock";
-      console.log("Variable Música antes del bloque", musica2);
-      {
-        let musica2 = "pop";
-        console.log("Variable Música antes del bloque", musica2);
-      }
-      console.log("Variable Música despues del bloque", musica2);
+      const objeto = {
+        nombre: "jon",
+        edad: 35,
+      };
+      const colores = ["blanco", "Negro", "Azul"];
+      console.log(objeto);
+      console.log(colores);
+      objeto.correo = "jonmircha@gmail.com";
+      colores.push("Anaranjado");
+      console.log(objeto);
+      console.log(colores);
+      // Con const la constante no puedes cambiarlo pero dependiendo el tipo de dato como bien son losprimitivos ya que accedemos directamente al valor
+      //Con los valores compuestos no estamos accediendo al valor directamente sino a una referencia de ese valor y ene se sentido nos permite añadirle propiedades a mi objeto, pero sigue siendo el mismo objeto, lo mismo con los array ya que son valores compuestos
     </script>
   </body>
 </html>
