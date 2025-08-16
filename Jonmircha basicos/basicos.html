@@ -4,33 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fundamentos JavaScript</title>
+    <h2></h2>
   </head>
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      // Usaremos const cuando no vayan a cambiar su variable en el flujo de la aplicacion
-      const PI = 3.1416;
-      /* Con const no puedes tener variables sin definir */
-      // Con let si que puedes
-      // const NUEVE;
-      // PI = 3.15;
-      console.log(PI);
-      let a;
-      a = "Kenai";
-      console.log(a);
-      const objeto = {
-        nombre: "jon",
-        edad: 35,
-      };
-      const colores = ["blanco", "Negro", "Azul"];
-      console.log(objeto);
-      console.log(colores);
-      objeto.correo = "jonmircha@gmail.com";
-      colores.push("Anaranjado");
-      console.log(objeto);
-      console.log(colores);
-      // Con const la constante no puedes cambiarlo pero dependiendo el tipo de dato como bien son losprimitivos ya que accedemos directamente al valor
-      //Con los valores compuestos no estamos accediendo al valor directamente sino a una referencia de ese valor y ene se sentido nos permite añadirle propiedades a mi objeto, pero sigue siendo el mismo objeto, lo mismo con los array ya que son valores compuestos
+      //  Cadenas de Texto aka Strings
+      let nombre = "Jon";
+      let apellido = "Mircha";
+      // Esta con el constructor no se suele usar
+      let saludo = new String("hola Mundo");
+      let lorem =
+        "      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consectetur quas ex vero cum a harum quasi doloremque quia atque illum esse dolor labore ipsum voluptates nemo ab, debitis eum.";
+      console.log(nombre, apellido, saludo);
+      console.log(
+        nombre.length,
+        apellido.length,
+        saludo.length,
+        nombre.toLocaleUpperCase(),
+        apellido.toLocaleLowerCase(),
+        // includes te dice si esta incluido en el string dicha palabra
+        lorem.includes("amet"),
+        lorem.includes("jon"),
+        // Trim quita los espacios en blanco al principio y al final
+        lorem.trim(),
+        // Split parte el texto respecto al caraceter que has puesto entre las comillas,sino pones nada te creara un arreglo con cada caracter,espacio etc
+        lorem.split(" "),
+        lorem.split(",")
+      );
     </script>
   </body>
 </html>
