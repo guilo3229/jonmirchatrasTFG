@@ -8,22 +8,16 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      let verdadero = true;
-      let falso = false;
-      console.log(typeof verdadero, typeof falso);
-      console.log(verdadero, falso);
-      let v = Boolean(true);
-      let f = Boolean(false);
-      console.log(typeof v, typeof f);
-      console.log(verdadero, falso);
-      // El numero en booleano de 0 tiende a false
-      console.log(Boolean(0));
-      // El valor negativo en boleeano tiende a true
-      console.log(Boolean(-7));
-      //Una cadena de texto sin caracteres o espacios tiende a false
-      console.log(Boolean(""));
-      // Una cadena de texto que contenga un espacio o cuealquier caracter tiende a true
-      console.log(Boolean(" "));
+      // TAnto null como undefined van a marcar un valor ausente
+      // Cuando no damos un valor a una variable y no se le asigno ningun valor
+      let indefinida;
+      console.log(indefinida);
+      // El valor null es un valor dado personalmente por el programador le ha asignadoe se valor
+      // null es un valor especial que indica la ausencia de un valor
+      let nulo = null;
+      // Nan - Not a Number
+      let noEsUnNumero = "hola" * 3.7;
+      console.log(noEsUnNumero);
     </script>
   </body>
 </html>
