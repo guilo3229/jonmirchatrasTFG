@@ -8,24 +8,22 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      let nombre = "Jon",
-        apellido = "MirCha";
-      // Concatenación
-      let saludo = "Hola mi nombre es " + nombre + " " + apellido + ".";
-      console.log(saludo);
-      // Interpolacion de variables
-      // Usamreos Template String
-      let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;
-      console.log(saludo2);
-      let ul = `
-    <ul>
-      <li>Primavera</li>
-      <li>Verano</li>
-      <li>Otoño</li>
-      <li>Invierno</li>
-    </ul>
-      `;
-      console.log(ul);
+      let verdadero = true;
+      let falso = false;
+      console.log(typeof verdadero, typeof falso);
+      console.log(verdadero, falso);
+      let v = Boolean(true);
+      let f = Boolean(false);
+      console.log(typeof v, typeof f);
+      console.log(verdadero, falso);
+      // El numero en booleano de 0 tiende a false
+      console.log(Boolean(0));
+      // El valor negativo en boleeano tiende a true
+      console.log(Boolean(-7));
+      //Una cadena de texto sin caracteres o espacios tiende a false
+      console.log(Boolean(""));
+      // Una cadena de texto que contenga un espacio o cuealquier caracter tiende a true
+      console.log(Boolean(" "));
     </script>
   </body>
 </html>
