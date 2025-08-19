@@ -8,61 +8,37 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      /*
-      Una función es un bloque de código autocontenido, que se puede definir una vez y ejecutar en cualquier momento.
-      Opcionalmente una funcion puede aceptar parámetros y devoler un valor.
-
-      Las funciones en JavaScript son objetos, un tipo especial de objetos:
-      Se dice que las funciones son ciudadanos de primera clase porque pueden asignarse a un valor, y pueden pasarse como argumentos y usarse como un valor de retorno
-      */
-      // Función Declarada
-      function estoEsUnaFuncion() {
-        console.log("Uno");
-        console.log("Dos");
-        console.log("Tres");
-      }
-      // // Invocacion de función
-      // estoEsUnaFuncion();
-      // estoEsUnaFuncion();
-      // estoEsUnaFuncion();
-      // estoEsUnaFuncion();
-      function unaFuncionQueDevuelveValor() {
-        console.log("Uno");
-        // Cuando una funcion encuentra la palabra return ignora las lineas siguientes y retorna ese valor
-        return 19;
-        console.log("Dos");
-        console.log("Tres");
-        return "La función ha retornado una Cadena de texto";
-      }
-      // Mejor adjudicar el valor de la funcion a una variable y despues hacer un console.log con ese valor.
-      // Aqui al darle el valor a una variable es decir iguaandola a una funcion la ejecutara y dara su valor final del return a esa variable pero habra ejecutado todo lo anterior al return tambien
-      // let valorDeFuncion = unaFuncionQueDevuelveValor();
-      // console.log(valorDeFuncion);
-
-      // Como hacer que una funcion reciba valores
-      function saludar(nombre = "Desconocido", edad = 0) {
-        console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`);
-      }
-      saludar("Kenai", 7);
-      saludar();
-
-      // Funciones declaradas VS funciones expresadas
-      funciondeclarada();
-      function funciondeclarada() {
-        console.log(
-          "Esto es una fucion declarada puede invocarse en cualquier parte de nuestro codigo incluso antes de que la funcion sea declarada"
-        );
-      }
-      funciondeclarada();
-
-      // Funcion anónima
-      // funcionExpresada();
-      const funcionExpresada = function () {
-        console.log(
-          "Esto es una fucnion expresada es decir una fucnicion que se le asignado como valor de una variable,si invocamos esta funcion antes de su definicion JS nos dira'funcionExpresada' before initialization"
-        );
-      };
-      funcionExpresada();
+      const a = [];
+      const b = [1, true, "hola", ["A", "B", "C", [1, 2, 3]]];
+      console.log(a);
+      console.log(b);
+      console.log(b.length);
+      // para acceder a la referencia dentro de los arreglos seria:
+      console.log(b[2]);
+      // Coordenadas primero padrehijo y luego nieto si tuviese ¡...
+      console.log(b[3][2]);
+      console.log(b[3][3][0]);
+      const c = Array.of("X", "Y", "Z", 9, 8, 7);
+      console.log(c);
+      const d = Array(100).fill(false);
+      console.log(d);
+      // otra foarma de definir uun array nueo pero esta mas en desuso
+      const e = new Array();
+      console.log(e);
+      const f = new Array(1, 2, 3, true, false);
+      console.log(f);
+      const colores = ["Rojo", "Verde", "Azul"];
+      console.log(colores);
+      // push agrega el ultimo elmento alfinal
+      colores.push("Negro");
+      console.log(colores);
+      // pop Elimina el elemento del final
+      colores.pop();
+      console.log(colores);
+      /* Hay un metodo nos permite ejecutar una funcion por cada elemento que tenga nuestro arreglo */
+      colores.forEach(function (el, id, f, j) {
+        console.log(`<li id="${id}">${el}</li> ${f} ${j}`);
+      });
     </script>
   </body>
 </html>
