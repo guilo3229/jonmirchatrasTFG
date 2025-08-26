@@ -8,37 +8,62 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      const a = [];
-      const b = [1, true, "hola", ["A", "B", "C", [1, 2, 3]]];
+      let a = new String("Hola");
       console.log(a);
+      // Es muy adecuado que usemos const cuando trabajemos con objetos para no trasformar el tipo de dato, ya que podemos modificaro por dentro y asi evitamos que cambie la referencia de este y evito que otra contante me quiteesa referencia resepcto a let
+      const b = {};
       console.log(b);
-      console.log(b.length);
-      // para acceder a la referencia dentro de los arreglos seria:
-      console.log(b[2]);
-      // Coordenadas primero padrehijo y luego nieto si tuviese ¡...
-      console.log(b[3][2]);
-      console.log(b[3][3][0]);
-      const c = Array.of("X", "Y", "Z", 9, 8, 7);
+      // No es recomendado pero podemos crear objetos con el prototipo Object
+      const c = new Object();
       console.log(c);
-      const d = Array(100).fill(false);
-      console.log(d);
-      // otra foarma de definir uun array nueo pero esta mas en desuso
-      const e = new Array();
-      console.log(e);
-      const f = new Array(1, 2, 3, true, false);
-      console.log(f);
-      const colores = ["Rojo", "Verde", "Azul"];
-      console.log(colores);
-      // push agrega el ultimo elmento alfinal
-      colores.push("Negro");
-      console.log(colores);
-      // pop Elimina el elemento del final
-      colores.pop();
-      console.log(colores);
-      /* Hay un metodo nos permite ejecutar una funcion por cada elemento que tenga nuestro arreglo */
-      colores.forEach(function (el, id, f, j) {
-        console.log(`<li id="${id}">${el}</li> ${f} ${j}`);
-      });
+      /* Dentro de un objeto a las variables se le van llamar atributos/propiedades y a las funciones se les llama métodos */
+      const jon = {
+        nombre: "Jon",
+        apellido: "Mircha",
+        edad: 35,
+        pasatiempos: ["Correr", "Hacer ejercicio", "Dar clases", [1, 2, 3]],
+        soltero: false,
+        contacto: {
+          email: "jonmircha@gmail.com",
+          twitter: "@jonmircha",
+          movil: "5215512345678",
+          // Se puede usar un arrow function
+        },
+        saludar: function () {
+          console.log("Hola :)");
+        },
+        decirMiNombre: function () {
+          ///* Usamos this para referirnos a los valores del objeto y aplicarlos en sus metodos es como decir este */
+          console.log(
+            `Hola me lllamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en twitter. `
+          );
+        },
+      };
+      console.log(jon);
+      console.log(jon["nombre"]);
+      console.log(jon["apellido"]);
+      // La forma mas ceptada es la del punto
+      console.log(jon.nombre);
+      console.log(jon.apellido);
+      console.log(jon.apellido);
+      console.log(jon.edad);
+      console.log(jon.soltero);
+      console.log(jon.pasatiempos);
+      console.log(jon.pasatiempos[1]);
+      // Para arrays dentro de arrays puedes usar la anotacion corchetes porque sino no se puede con el punto
+      console.log(jon.pasatiempos[3][1]);
+      // Aqui si puedes poner otro punto para ver la propiedad dentro del objeto en el objeto
+      console.log(jon.contacto.twitter);
+      // saludar es un metodoe es decir una funcion dentro de un objeto
+      jon.saludar();
+      jon.decirMiNombre();
+      // Keys nos da las llaves del objeto con sus propiedades
+      console.log(Object.keys(jon));
+      // Y con values nos da un array con los valores de esas llaves
+      console.log(Object.values(jon));
+      // Para saber si un objeto tiene una propiedad podemosusar el metodo de  hasOwnPropery("nombre"), esto sirve para hacer validaciones por ejemplo a objetos para validar,ya que valida a true o false
+      console.log(jon.hasOwnProperty("nombre"));
+      console.log(jon.hasOwnProperty("nacimiento"));
     </script>
   </body>
 </html>
