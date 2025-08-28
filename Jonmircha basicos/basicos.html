@@ -8,66 +8,102 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      /* Operadores */
-      /* Aritméticos: + - * / % () */
-      let a = 5 + (5 - 10) * 3;
-      // Operaor aritmetico % modulo y por lo tanto nos da el resto de una division
-      let modulo = 5 % 2;
-      console.log(a);
-      console.log(modulo);
-      /* Operaddores RELACIONALES
-      > < >= <= == === != !==  */
-      // console.log(8 > 9);
-      // console.log(9 > 8);
-      // console.log(8 >= 9);
-      // console.log(9 >= 8);
-      // console.log(8 >= 8);
-      // console.log(7 < 7);
-      // console.log(7 <= 7);
+      /* if-else */
+      let edad = 17;
+      if (edad > 17) {
+        console.log("Eres mayor de edad");
+      } else {
+        console.log("Eres menor de edad");
+      }
+      if (edad >= 18) {
+        console.log("Eres mayor de edad");
+      } else {
+        console.log("Eres menor de edad");
+      }
+      if (edad < 18) {
+        console.log("Eres menor de edad");
+      } else {
+        console.log("Eres mayor de edad");
+      }
+      if (edad <= 17) {
+        console.log("Eres menor de edad");
+      } else {
+        console.log("Eres mayor de edad");
+      }
+      /* if - else if -else */
+      /* 
+      Déjame dormir 0hrs - 5hrs
+      Buenos dias 6hrs - 11hrs
+      buenas tardes 12hrs - 18hrs
+      buenas noches 19hrs - 23hrs
 
-      /*
-      = 1 Asignacion a es igual a 5 como una variable
-      == 2 iguales es comparacion de valores
-      === 3 iguales  es comparacion de tipo de dato y de valor ->buena practica
+
       */
-      // console.log(7 == 7);
-      // console.log("7" == 7);
-      // console.log(0 == false);
-      // console.log(7 === 7);
-      // console.log("7" === 7);
-      // console.log(0 === false);
-      /* Incremetno Decremento */
-      // let i = 2;
-      // let ib = 1;
-      // let ic = 1;
-      // let id = 1;
-      // // i = i+2
-      // i += 3;
-      // ib -= 3;
-      // ic /= 3;
-      // id *= 3;
-      // console.log(i);
-      // console.log(ib);
-      // console.log(ic);
-      // console.log(id);
-      /* Operador unario */
-      // Mejor hacerlo despues de la variable eso es porque si hacemmos un console.log(i++) primero pondra el resultado y luego le sumara uno al valor de i es como poner console.log y luego sumarle 1 para el siguiente console.log
-      // console.log(i++);
-      // console.log(++i);
-      // i++;
-      // i--;
-      // ++i;
-      // --i;
-      // console.log(i);
-      /* Operadores logicos
-      !not: Niega, es decir lo que es verdadero lo vuleve falso y viceversa
-      || or Cuando tengo 2 o mas condiciones con que una se cumpla es decir sea verdadera , el Or validara
-      && - And todas las condiciones tienen que cumplirse para que se valide*/
-      console.log(!true);
-      console.log(!false);
-      console.log(9 === 9 || "9" === 9);
-      console.log(9 === 9 && "9" === 9);
-      console.log(9 === 9 && "9" === "9");
+      let hora = 3;
+      if (hora >= 0 && hora <= 5) {
+        console.log("Déjame dormir");
+      } else if (hora >= 6 && hora <= 11) {
+        console.log("Buenos dias");
+      } else if (hora >= 12 && hora <= 18) {
+        console.log("Buenas tardes");
+      } else {
+        console.log("buenas noches");
+      }
+      if (hora < 6) {
+        console.log("Déjame dormir");
+      } else if (hora > 5 && hora <= 12) {
+        console.log("Buenos dias");
+      } else if (hora > 11 && hora < 19) {
+        console.log("Buenas tardes");
+      } else {
+        console.log("buenas noches");
+      }
+      /* Operador Ternario (condicion)? verdadero:falsa */
+      console.log("Operador Ternario");
+      // prettier-ignore
+      let eresMayor = edad >= 18 
+        ? "Eres Mayor de edad" 
+        : "Eres menor de edad";
+      console.log(eresMayor);
+      /* switch - case en donde tengamos diferentes valores para una mima varaiable*/
+      /* 
+      Domingo-0
+      Lunes-1
+      Martes-2
+      Miércoles-3
+      Jueves-4
+      Viernes-5
+      Sabado-5
+       */
+      let dia = 8;
+      switch (dia) {
+        case 0:
+          // La llave de apertura seria los dos puntos y la clausura seria el break
+          console.log("Domingo");
+          break;
+        case 1:
+          console.log("Lunes");
+          break;
+        case 2:
+          console.log("Martes");
+          break;
+        case 3:
+          console.log("Miércoles");
+          break;
+        case 4:
+          console.log("Jueves");
+          break;
+        case 5:
+          console.log("Viernes");
+          break;
+        case 6:
+          console.log("Sábado");
+          break;
+
+        default:
+          console.log("El día no existe");
+          break;
+      }
     </script>
   </body>
 </html>
