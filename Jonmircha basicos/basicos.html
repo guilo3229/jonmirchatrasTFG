@@ -8,29 +8,20 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      /* try catch finally */
-      // noExiste;
-      try {
-        console.log("En el Try se agrega el código a evaluar");
-        // El try captura el error y lo manda al catch una vez lo detecta
-        noExiste;
-        console.log("Segundo mensaje en el try");
-      } catch (error) {
-        console.log("Captura cualquier error surgido en el try");
-        console.log(error);
-      } finally {
-        console.log(
-          "El bloque finallly se ejecutara siempre al final de un bloque try-catch"
-        );
-      }
-      try {
-        let numero = "a";
-        if (isNaN(numero)) {
-          throw new Error("El caracter introducido no es un Número");
+      /*  break y continue nos van a ayudar a controlar el flujo de nuestras estructuras de control, por ejmplo saltarse ciertos numero de un bucle y seguir con los siguientes */
+      const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+      /* En el forEach no se puede usar el break y continue tampoco en los metodos */
+      for (let i = 0; i < numeros.length; i++) {
+        if (i === 5) {
+          break;
         }
-        console.log(numero * numero);
-      } catch (error) {
-        console.log(`Se produjo el siguiente error: ${error}`);
+        console.log(numeros[i]);
+      }
+      for (let i = 0; i < numeros.length; i++) {
+        if (i === 5) {
+          continue;
+        }
+        console.log(numeros[i]);
       }
     </script>
   </body>
