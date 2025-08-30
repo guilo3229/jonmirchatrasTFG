@@ -8,21 +8,26 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      /*  break y continue nos van a ayudar a controlar el flujo de nuestras estructuras de control, por ejmplo saltarse ciertos numero de un bucle y seguir con los siguientes */
-      const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-      /* En el forEach no se puede usar el break y continue tampoco en los metodos */
-      for (let i = 0; i < numeros.length; i++) {
-        if (i === 5) {
-          break;
-        }
-        console.log(numeros[i]);
-      }
-      for (let i = 0; i < numeros.length; i++) {
-        if (i === 5) {
-          continue;
-        }
-        console.log(numeros[i]);
-      }
+      /* El destructuring o destructuración  */
+      /* Sin destructuración */
+      let numeros = [1, 2, 3];
+      // Tengo la encesidad de guardarlos en valores diferentes
+      let uno = numeros[0];
+      let dos = numeros[1];
+      let tres = numeros[2];
+      console.log(uno, dos, tres);
+      /* Con destructuración */
+      const [a, b, c] = numeros;
+      console.log(a, b, c);
+      /* Yo tengo un objeto y necesito guardar cada una de sus propiedades independientes en variables y necesito hacer modificaciones etc */
+      let persona = {
+        nombre: "Jon",
+        apellido: "MirCha",
+        edad: 35,
+      };
+      // Para que funcione las variables en la destructuracion hay que igualarlas al nombre de las propiedades de dicho objeto por ejemplo si es nombre pones nombre
+      let { apellido, nombre, edad } = persona;
+      console.log(nombre, apellido, edad);
     </script>
   </body>
 </html>
