@@ -8,26 +8,30 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      /* El destructuring o destructuración  */
-      /* Sin destructuración */
-      let numeros = [1, 2, 3];
-      // Tengo la encesidad de guardarlos en valores diferentes
-      let uno = numeros[0];
-      let dos = numeros[1];
-      let tres = numeros[2];
-      console.log(uno, dos, tres);
-      /* Con destructuración */
-      const [a, b, c] = numeros;
-      console.log(a, b, c);
-      /* Yo tengo un objeto y necesito guardar cada una de sus propiedades independientes en variables y necesito hacer modificaciones etc */
-      let persona = {
-        nombre: "Jon",
-        apellido: "MirCha",
-        edad: 35,
+      let nombre = "Kenai",
+        edad = 7;
+      const perro = {
+        nombre: nombre,
+        edad: edad,
+        ladrar: function () {
+          console.log("guauu guaau!!");
+        },
       };
-      // Para que funcione las variables en la destructuracion hay que igualarlas al nombre de las propiedades de dicho objeto por ejemplo si es nombre pones nombre
-      let { apellido, nombre, edad } = persona;
-      console.log(nombre, apellido, edad);
+      console.log(perro);
+      perro.ladrar();
+
+      const dog = {
+        /* Si el valor tiene el mismo nombre que la propiedad se puede poner 1 vez y luego la coma */
+        nombre,
+        edad,
+        raza: "Callejero",
+        // Para los metodos tambien tenemos una forma de simplificarlos
+        ladrar() {
+          console.log("guauu fuauuu guauuu!!!");
+        },
+      };
+      console.log(dog);
+      dog.ladrar();
     </script>
   </body>
 </html>
