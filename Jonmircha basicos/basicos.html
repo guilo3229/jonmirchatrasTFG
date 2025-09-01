@@ -8,30 +8,29 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      let nombre = "Kenai",
-        edad = 7;
-      const perro = {
-        nombre: nombre,
-        edad: edad,
-        ladrar: function () {
-          console.log("guauu guaau!!");
-        },
-      };
-      console.log(perro);
-      perro.ladrar();
+      /* como poder ir agregar parametro infinitos a una funcion o una variable, si no sabes exactamente los valores que vas a recibir, se hace anteponiendole 3 puntos suspensivos y la letra c o la que sea, es el paremetro Rest,creara un arreglo con todas los valores que vayan entrando tendras que hace rpor ejmplo un forEach o un for of para recorrerlas y reasignarlas de ser necesario como tu quieras */
+      function sumar(a, b, ...c) {
+        let resultado = a + b;
 
-      const dog = {
-        /* Si el valor tiene el mismo nombre que la propiedad se puede poner 1 vez y luego la coma */
-        nombre,
-        edad,
-        raza: "Callejero",
-        // Para los metodos tambien tenemos una forma de simplificarlos
-        ladrar() {
-          console.log("guauu fuauuu guauuu!!!");
-        },
-      };
-      console.log(dog);
-      dog.ladrar();
+        c.forEach(function (n) {
+          resultado += n;
+        });
+        console.log(c);
+        return resultado;
+      }
+      console.log(sumar(1, 2, 3, 4));
+      console.log(sumar(1, 2, 3, 4, 5));
+      console.log(sumar(1, 2, 3, 4, 5, 6));
+      console.log(sumar(1, 2, 3, 4, 5, 6, 7));
+      const arr1 = [1, 2, 3, 4, 5],
+        arr2 = [6, 7, 8, 9, 0];
+      console.log(arr1, arr2);
+      // Quiero crear un arreglo 3 a partir d estos 2 elementos
+      const arr3 = [arr1, arr2];
+
+      const arr31 = [...arr1, ...arr2];
+      console.log(arr3);
+      console.log(arr31);
     </script>
   </body>
 </html>
