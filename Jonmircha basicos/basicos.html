@@ -8,29 +8,71 @@
   <body>
     <h1>Fundamentos JavaScript</h1>
     <script>
-      /* como poder ir agregar parametro infinitos a una funcion o una variable, si no sabes exactamente los valores que vas a recibir, se hace anteponiendole 3 puntos suspensivos y la letra c o la que sea, es el paremetro Rest,creara un arreglo con todas los valores que vayan entrando tendras que hace rpor ejmplo un forEach o un for of para recorrerlas y reasignarlas de ser necesario como tu quieras */
-      function sumar(a, b, ...c) {
-        let resultado = a + b;
+      /* POO origramacion orientada a objetos
+      Clases- Modelo a seguir:
+      Objetos - Es una instsancia de una clase( es decir una copia de ese modelo de la clase):
+        -Atributos - es una característica o propiedad del objeto(son variables dentro de un objeto)
+        -Métodos - son las acciones de un objeto puede realizar(son fucniones dentro de un objeto) */
+      const animal = {
+        nombre: "Snoopy",
+        sonar() {
+          console.log("Hago sonidos porque estoy vivo");
+        },
+      };
+      // /* El prototipo object es el objeto mas primitivo que tiene javascript */
+      console.log(animal);
+      //   const animal2 = {
+      //   nombre: "Lola Bunny",
+      //   sonar() {
+      // console.log("Hago sonidos porque estoy vivo");
+      //   },
+      // };
+      /* Funcion constructura (La voy a generar 1 vez y atraves de ella voy a crear nuevas instancias, nuevos objetos que sean de ese tipo) */
 
-        c.forEach(function (n) {
-          resultado += n;
-        });
-        console.log(c);
-        return resultado;
+      function Animal(nombre, genero) {
+        // Atributos(propiedades en los objetos)
+        this.nombre = nombre;
+        this.genero = genero;
+        // No se puede usar arrow function porque detectan el this como si fuese del objeto window entonces las funciones de la funcion constructora no pueden ser arrow function, cuando estemoms con funciones constructoras tanto las propiedades como los métodos tienen que colgar del objeto this
+        // metodos(funciones en los objetos)
+        this.sonar = function () {
+          console.log("Hago sonidos por que estoy vivo");
+        };
+        this.saludar = function () {
+          console.log(`Hola me llamo ${this.nombre}`);
+        };
       }
-      console.log(sumar(1, 2, 3, 4));
-      console.log(sumar(1, 2, 3, 4, 5));
-      console.log(sumar(1, 2, 3, 4, 5, 6));
-      console.log(sumar(1, 2, 3, 4, 5, 6, 7));
-      const arr1 = [1, 2, 3, 4, 5],
-        arr2 = [6, 7, 8, 9, 0];
-      console.log(arr1, arr2);
-      // Quiero crear un arreglo 3 a partir d estos 2 elementos
-      const arr3 = [arr1, arr2];
+      // Usaremos la palabra new nos va a permitir crear una instancia del tipo que le especifiquemos posteriormente
+      const snoopy = new Animal("Snoopy", "Macho"),
+        lolaBunny = new Animal("Lola Bunny", "Hembra");
+      console.log(snoopy);
+      console.log(lolaBunny);
+      // Imaginate que en un videojeugo tenemos que hacer varias iteraciones y personajes  y son miles esto seria muy poco util ya que cada uno estaria en una varaibles y esto ocuparia mucho en nuestro compiladores.
 
-      const arr31 = [...arr1, ...arr2];
-      console.log(arr3);
-      console.log(arr31);
+      // El truco seria asignarle el metodo a la funcion prototipica de Animal
+
+      snoopy.sonar();
+      snoopy.saludar();
+      lolaBunny.sonar();
+      lolaBunny.saludar();
+      /* Ahora lo vamos a hacer de tal manera como el lenguaje las interpretaria aunque posteriormente enseñaremos como hacerla de manera msa facilmente, esto se hace para entender como el lenguaje lo hace , aunque luego usaremos las class(que hara este procedimiento entre bambalinas)*/
+
+      // Funcion constructora donde asignamos los métodos al Prototipo, no a la función como tal
+      function Animal2(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+      }
+      // Metodos agregados al prototipo de la funcion constructora
+      Animal2.prototype.sonar = function () {
+        console.log("Hago sonidos por que estoy vivo");
+      };
+      Animal2.prototype.saludar = function () {
+        console.log(`Hola me llamo ${this.nombre}`);
+      };
+      const snoopy2 = new Animal2("Snoopy", "Macho"),
+        lolaBunny2 = new Animal2("Lola Bunny", "Hembra");
+      console.log(snoopy2);
+      console.log(lolaBunny2);
     </script>
   </body>
 </html>
