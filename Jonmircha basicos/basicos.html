@@ -9,10 +9,10 @@
     <h1>Fundamentos JavaScript</h1>
     <script>
       /* POO origramacion orientada a objetos
-      Clases- Modelo a seguir:
-      Objetos - Es una instsancia de una clase( es decir una copia de ese modelo de la clase):
-        -Atributos - es una característica o propiedad del objeto(son variables dentro de un objeto)
-        -Métodos - son las acciones de un objeto puede realizar(son fucniones dentro de un objeto) */
+            Clases- Modelo a seguir:
+            Objetos - Es una instsancia de una clase( es decir una copia de ese modelo de la clase):
+              -Atributos - es una característica o propiedad del objeto(son variables dentro de un objeto)
+              -Métodos - son las acciones de un objeto puede realizar(son fucniones dentro de un objeto) */
       const animal = {
         nombre: "Snoopy",
         sonar() {
@@ -69,10 +69,30 @@
       Animal2.prototype.saludar = function () {
         console.log(`Hola me llamo ${this.nombre}`);
       };
-      const snoopy2 = new Animal2("Snoopy", "Macho"),
+      // Herencia Prototípica
+      function Perro(nombre, genero, tamanio) {
+        this.super = Animal2;
+        this.super(nombre, genero);
+        this.tamanio = tamanio;
+      }
+      // Eslta linea hace la que Perro esta heredando de Animal
+      Perro.prototype = new Animal2();
+      Perro.prototype.constructor = Perro;
+      //
+      // Sobreescritura de metodos del prototipo padre en el hijio
+      Perro.prototype.sonar = function () {
+        console.log("Soy un perro y mi sonido es un ladrido");
+      };
+      Perro.prototype.ladrar = function () {
+        console.log("Guauuuu Guauuu !!!");
+      };
+      const snoopy2 = new Perro("Snoopy", "Macho", "Medianno"),
         lolaBunny2 = new Animal2("Lola Bunny", "Hembra");
       console.log(snoopy2);
       console.log(lolaBunny2);
+      snoopy2.sonar();
+      snoopy2.ladrar();
+      lolaBunny.sonar();
     </script>
   </body>
 </html>
